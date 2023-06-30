@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 import TextBox from "./Components/TextBox";
 import Alert from "./Components/Alert";
 import About from "./Components/About";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -36,27 +36,45 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <>
       <Navbar title="MyTitle" text={text} mode={mode} handle={handleMode} />
       <Alert alert={alert} />
 
       <div className="container">
-        <Routes>
-          <Route
-            path="/"
-            element={
               <TextBox
                 heading="Enter Your Text to Analyse"
                 mode={mode}
                 showAlert={showAlert}
-              />
-            }
-          />
-          <Route path="/about" element={<About />} />
-        </Routes>
+              /> 
+         {/* <About /> */}
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 
 export default App;
+
+
+
+
+
+// <BrowserRouter>
+// <Navbar title="MyTitle" text={text} mode={mode} handle={handleMode} />
+// <Alert alert={alert} />
+
+// <div className="container">
+//   <Routes>
+//     <Route
+//       path="/"
+//       element={
+//         <TextBox
+//           heading="Enter Your Text to Analyse"
+//           mode={mode}
+//           showAlert={showAlert}
+//         />
+//       }
+//     />
+//     <Route path="/about" element={<About />} />
+//   </Routes>
+// </div>
+// </BrowserRouter>
